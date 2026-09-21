@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Konga Independence @65 Campaign</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f6f6f6;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Header Styles */
+      .header {
+        width: 100%;
+        position: relative;
+      }
+
+      .header img {
+        width: 100%;
+        display: block;
+      }
+
+      .call-actions {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin: 12px 0;
+        padding: 0 16px;
+      }
+
+      .call-to-order {
+        background-color: #ffffff;
+        padding: 16px 24px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 20px;
+        flex: 1;
+        max-width: 500px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .whatsapp-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .call-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .call-to-order {
+          width: 100%;
+          padding: 12px;
+          font-size: 16px;
+          max-width: none;
+        }
+      }
+
+      /* Section Headers (Updated to match gradient styling requested) */
+      .category-header, .section-header {
+        background: linear-gradient(
+          90deg,
+          #027849 0%,
+          #ffffff 25%,
+          #ffffff 50%,
+          #ffffff 75%,
+          #027849 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 32px;
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        color: #027849;
+        margin: 12px 0 0 0;
+        min-height: 64px;
+        box-sizing: border-box;
+      }
+
+      .category-header .section-title, .section-header .section-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      @media (max-width: 600px) {
+        .category-header, .section-header {
+          padding: 16px 12px;
+          min-height: 48px;
+        }
+        .category-header .section-title, .section-header .section-title {
+          font-size: 16px;
+        }
+      }
+
+      /* Cat Banners Section */
+      .cat-banners-container {
+        width: 100%;
+        margin-inline: auto;
+        margin-block: 12px;
+        background: #fff;
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+      }
+      .cat-banners {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+        width: 100%;
+        justify-items: stretch;
+        align-items: stretch;
+      }
+      .cat-banner-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+      }
+      .cat-banner-card:hover {
+        transform: translateY(-4px);
+      }
+      .cat-banner-image {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+      .cat-banner-title {
+        padding: 12px;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        color: #333;
+        background: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .cat-banners {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+        .cat-banner-title {
+          font-size: 14px;
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .cat-banners {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          padding: 0 12px;
+        }
+        .cat-banner-title {
+          font-size: 13px;
+          padding: 8px 4px;
+        }
+      }
+
+      /* Bento Grid Styles */
+      .bento-grid {
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+        max-width: 1200px;
+        width: 100%;
+        flex-direction: column;
+        gap: 24px;
+        margin-inline: auto;
+        background: #fff;
+      }
+
+      .bento-row {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+      }
+
+      .bento-column {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 463px;
+      }
+
+      .bento-item {
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s;
+      }
+
+      .bento-item:hover {
+        transform: translateY(-4px);
+      }
+
+      .bento-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* First Row Items */
+      .green-white {
+        width: 710px;
+        height: 463px;
+      }
+
+      .beauty-hub {
+        width: 463px;
+        height: 463px;
+      }
+
+      /* Second Row Items */
+      .groceries,
+      .kids {
+        width: 100%;
+        height: 221.5px;
+      }
+
+      .bundles {
+        width: 710px;
+        height: 463px;
+      }
+
+      @media (max-width: 1200px) {
+        .bento-grid {
+          padding: 16px;
+          gap: 16px;
+        }
+
+        .bento-row {
+          gap: 16px;
+          flex-direction: column;
+        }
+
+        .bento-column {
+          width: 100%;
+          gap: 16px;
+        }
+
+        .green-white,
+        .beauty-hub,
+        .bundles {
+          width: 100%;
+          height: auto;
+          aspect-ratio: 3/2;
+        }
+
+        .groceries,
+        .kids {
+          aspect-ratio: 2/1;
+        }
+      }
+
+      /* Brand Banners Section */
+      .brand-banners {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 24px;
+        width: 100%;
+        margin: 0 auto;
+        justify-items: stretch;
+        align-items: stretch;
+      }
+      .brand-banners .cat-banner-card {
+        border-radius: 4px;
+        overflow: hidden;
+        background: #faf9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s;
+        display: flex;
+        align-items: stretch;
+      }
+      .brand-banners .cat-banner-card:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      }
+      .brand-banners .cat-banner-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+      }
+      @media (max-width: 900px) {
+        .brand-banners {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+      }
+      @media (max-width: 600px) {
+        .brand-banners {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+      }
+
+      /* Promo Banners Section */
+      .promo-banners {
+        background: #fff;
+        margin-block: 12px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      .promo-banners-inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        padding: 32px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      .promo-banners .cat-banner-card {
+        border-radius: 8px;
+      }
+      .promo-banners .cat-banner-card img {
+        aspect-ratio: 133/88;
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      }
+      @media (max-width: 900px) {
+        .promo-banners-inner {
+          gap: 16px;
+          max-width: 98vw;
+        }
+      }
+      @media (max-width: 600px) {
+        .promo-banners-inner {
+          grid-template-columns: 1fr;
+          gap: 10px;
+          padding: 8px;
+        }
+      }
+
+      /* Written SEO Section */
+      .written-seo {
+        background: #fff;
+        margin: 32px 0 !important;
+        padding: 32px !important;
+        border-radius: 8px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .written-seo h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 2rem;
+        margin-bottom: 16px;
+        color: #252525;
+      }
+      .written-seo h3 {
+        margin-top: 24px;
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+        color: #252525;
+        font-family: "Poppins", sans-serif;
+      }
+      .written-seo p {
+        font-size: 1.1rem;
+        margin-bottom: 16px;
+        color: #252525;
+        line-height: 1.5;
+      }
+      .written-seo ul {
+        margin-bottom: 16px;
+        padding-left: 20px;
+      }
+      .written-seo ul li {
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+        color: #252525;
+      }
+      .written-seo a {
+        color: #027849;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+      @media (max-width: 600px) {
+        .written-seo {
+          padding: 12px !important;
+          border-radius: 8px;
+        }
+        .written-seo h2 {
+          font-size: 1.2rem;
+        }
+        .written-seo h3 {
+          font-size: 1rem;
+        }
+        .written-seo p,
+        .written-seo ul li {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <img
+        src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280338/landingPages/Freedom%20Sales%2001_10_2025/main_banner.gif"
+        alt="Konga Freedom Sales"
+      />
+    </header>
+
+    <div class="call-actions">
+      <div class="call-to-order">
+        <a href="tel:07080635700" target="_blank" rel="noopener">
+          Call To Order 07080635700
+        </a>
+      </div>
+      <div class="call-to-order">
+        <a
+          href="https://wa.me/2347016542481"
+          target="_blank"
+          rel="noopener"
+          class="whatsapp-link"
+        >
+          <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path
+              fill="#25D366"
+              d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"
+            />
+          </svg>
+          Chat on WhatsApp 07016542481
+        </a>
+      </div>
+    </div>
+
+    <!-- Special Deals Section -->
+    <div class="category-header">
+      <span class="section-title">SPECIAL DEALS</span>
+    </div>
+
+    <!-- Bento Grid Section -->
+    <div class="bento-grid">
+      <!-- First Row -->
+      <div class="bento-row">
+        <a
+          href="https://www.konga.com/search?search=FreedomSalesGreen%26WhiteSpecial"
+          class="bento-item green-white"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759298376/landingPages/Freedom%20Sales%2001_10_2025/greenWhiteSpecials.gif"
+            alt="Green & White Specials"
+          />
+        </a>
+        <a
+          href="https://www.konga.com/search?search=FreddomSalesBHPC"
+          class="bento-item beauty-hub"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759298394/landingPages/Freedom%20Sales%2001_10_2025/beautyHub.png"
+            alt="Beauty Hub"
+          />
+        </a>
+      </div>
+
+      <!-- Second Row -->
+      <div class="bento-row">
+        <div class="bento-column">
+          <a
+            href="https://www.konga.com/search?search=FreedomSalesGroceries%26Household"
+            class="bento-item groceries"
+          >
+            <img
+              src="https://www-konga-com-res.cloudinary.com/image/upload/v1759298375/landingPages/Freedom%20Sales%2001_10_2025/groceries.gif"
+              alt="Groceries"
+            />
+          </a>
+          <a
+            href="https://www.konga.com/search?search=FreedomSalesBabyKids%26Toys25"
+            class="bento-item kids"
+          >
+            <img
+              src="https://www-konga-com-res.cloudinary.com/image/upload/v1759298375/landingPages/Freedom%20Sales%2001_10_2025/kidToys.gif"
+              alt="Baby, Kids & Toys"
+            />
+          </a>
+        </div>
+        <a
+          href="https://www.konga.com/search?search=FreedomSalesFreedomBundles"
+          class="bento-item bundles"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759298398/landingPages/Freedom%20Sales%2001_10_2025/freedomBundles.gif"
+            alt="Freedom Bundles"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- More Categories Section -->
+    <div class="category-header">
+      <span class="section-title">MORE CATEGORIES</span>
+    </div>
+
+    <!-- Cat Banners Section -->
+    <div class="cat-banners-container">
+      <div class="cat-banners">
+        <a
+          href="https://www.konga.com/search?search=FreedomSalesFashion%26Style25"
+          class="cat-banner-card"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280630/landingPages/Freedom%20Sales%2001_10_2025/fashionStyle.png"
+            alt="Electronics"
+            class="cat-banner-image"
+          />
+          <span class="cat-banner-title">Fashion & Style</span>
+        </a>
+
+        <a
+          href="https://www.konga.com/search?search=FreedomSalesShoppersChoice"
+          class="cat-banner-card"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280721/landingPages/Freedom%20Sales%2001_10_2025/shopperChoice.gif"
+            alt="Computing"
+            class="cat-banner-image"
+          />
+          <span class="cat-banner-title">Shoppers’ Choice</span>
+        </a>
+
+        <a
+          href="https://www.konga.com/search?search=FreedomSalesHome%26Kitchen%20"
+          class="cat-banner-card"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280616/landingPages/Freedom%20Sales%2001_10_2025/homeKitchen.png"
+            alt="Home & Kitchen"
+            class="cat-banner-image"
+          />
+          <span class="cat-banner-title">Home & Kitchen</span>
+        </a>
+
+        <a href="https://www.konga.com/deals/daily" class="cat-banner-card">
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280769/landingPages/Freedom%20Sales%2001_10_2025/flashSale.gif"
+            alt="Flash Sale"
+            class="cat-banner-image"
+          />
+          <span class="cat-banner-title">Flash Sale</span>
+        </a>
+
+        <a
+          href="https://www.konga.com/search?search=FreedomSalesPower%26Automobile2025"
+          class="cat-banner-card"
+        >
+          <img
+            src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280639/landingPages/Freedom%20Sales%2001_10_2025/power.png"
+            alt="Power & Automobiles"
+            class="cat-banner-image"
+          />
+          <span class="cat-banner-title">Power & Automobiles</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BRANDS Section -->
+    <div class="section-header">
+      <span class="section-title">BRANDS</span>
+    </div>
+
+    <!-- Official Brand Cards -->
+    <div class="cat-banners-container" style="background: #fff; margin-block: 12px">
+      <div class="brand-banners">
+        <a href="https://www.konga.com/merchant/230034" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280338/landingPages/Freedom%20Sales%2001_10_2025/starlink.png" alt="Starlink" />
+        </a>
+        <a href="https://www.konga.com/content/zinox" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280340/landingPages/Freedom%20Sales%2001_10_2025/zinox.png" alt="Zinox" />
+        </a>
+        <a href="https://www.konga.com/content/samsungstore" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280336/landingPages/Freedom%20Sales%2001_10_2025/samsung.png" alt="Samsung" />
+        </a>
+        <a href="https://www.konga.com/content/ecoflow" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280618/landingPages/Freedom%20Sales%2001_10_2025/ecoflow.png" alt="Ecoflow" />
+        </a>
+        <a href="https://www.konga.com/content/lgstore" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280335/landingPages/Freedom%20Sales%2001_10_2025/LG.png" alt="LG" />
+        </a>
+        <a href="https://www.konga.com/content/zte" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280342/landingPages/Freedom%20Sales%2001_10_2025/zte.png" alt="ZTE" />
+        </a>
+        <a href="https://www.konga.com/content/xiaomi-store" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280341/landingPages/Freedom%20Sales%2001_10_2025/xiaomi.png" alt="Xiaomi" />
+        </a>
+        <a href="https://www.konga.com/content/garnier" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280640/landingPages/Freedom%20Sales%2001_10_2025/garnier.png" alt="Garnier" />
+        </a>
+        <a href="https://www.konga.com/content/cerave" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280597/landingPages/Freedom%20Sales%2001_10_2025/cerave.png" alt="CeraVe" />
+        </a>
+        <a href="#https://www.konga.com/brand/mary-kay" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280334/landingPages/Freedom%20Sales%2001_10_2025/marykay.png" alt="Mary Kay" />
+        </a>
+        <a href="https://www.konga.com/brand/la-roche-posay" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280333/landingPages/Freedom%20Sales%2001_10_2025/larocheposay.png" alt="La Roche-Posay" />
+        </a>
+        <a href="https://www.konga.com/merchant/149539" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280342/landingPages/Freedom%20Sales%2001_10_2025/unilever.png" alt="Unilever" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Premium Picks & Flash Sale Section -->
+    <div class="promo-banners">
+      <div class="promo-banners-inner">
+        <a href="https://kongacares.konga.com/" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280620/landingPages/Freedom%20Sales%2001_10_2025/kongaCares.gif" alt="Premium Picks Banner" />
+        </a>
+        <a href="#" class="cat-banner-card">
+          <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280629/landingPages/Freedom%20Sales%2001_10_2025/buyNowpayLater.gif" alt="Flash Sale Banner" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Rate US -->
+    <section style="margin: 32px 0; padding: 0">
+      <a href="https://linktr.ee/dakolo14" target="_blank" style="display: block">
+        <img src="https://www-konga-com-res.cloudinary.com/image/upload/v1759280338/landingPages/Freedom%20Sales%2001_10_2025/rateus.gif" style="width: 100%" alt="Rate Konga" />
+      </a>
+    </section>
+
+    <!-- Written SEO Section -->
+    <section class="written-seo">
+      <h2>
+        Konga Independence @65 Campaign – Celebrate Nigeria with Freedom
+        Deals, Discounts & Green-White Specials
+      </h2>
+      <p>
+        As Nigeria marks its 65th Independence Anniversary, Konga is proud to
+        join the celebration with exciting Freedom Sales and unbeatable
+        Independence Day deals across all categories. This season, we bring you
+        the <strong>Freedom 14</strong>,
+        <strong>@65 Independence Deals</strong>,
+        <strong>Shoppers’ Choice Offers</strong>,
+        <strong>Free Delivery Deals</strong>, and special
+        <strong>Green & White Discounts</strong> that honor the spirit of
+        unity, freedom, and progress.
+      </p>
+      <p>
+        Whether you’re upgrading your home, shopping fashion essentials,
+        stocking up on groceries, or gifting loved ones, the
+        <strong>Konga Independence @65 Campaign</strong> gives you the chance to
+        shop smarter and save more. Celebrate freedom your way — with
+        Konga’s nationwide deals designed to make every Nigerian’s shopping
+        experience memorable.
+      </p>
+      <h3>🎉 Shop Freedom 14 & Independence Deals</h3>
+      <p>
+        Our curated Independence Campaign brings together all your favorite
+        products in one place. Enjoy exclusive discounts, flash sales, and
+        limited-time offers on:
+      </p>
+      <ul>
+        <li>
+          Electronics & Gadgets – Celebrate with smart TVs,
+          smartphones, and accessories at freedom prices.
+        </li>
+        <li>
+          Fashion & Apparel – Green & White specials on clothing,
+          footwear, and accessories for men and women.
+        </li>
+        <li>
+          Home & Kitchen Essentials – Cookware, appliances, and décor
+          for your Independence feast.
+        </li>
+        <li>
+          Groceries & Food Items – Shop Nigerian favorites with free
+          delivery offers and bundle discounts.
+        </li>
+        <li>
+          Beauty & Health Products – Skincare, fragrances, and
+          wellness items to refresh your Independence glow.
+        </li>
+        <li>
+          Kids & Family Deals – Gifts, games, and everyday items for
+          the whole family.
+        </li>
+        <li>
+          Office & Tech Accessories – Save big on devices, stationery,
+          and smart work essentials.
+        </li>
+      </ul>
+      <h3>🎯 Why Shop the Konga Independence @65 Campaign?</h3>
+      <ul>
+        <li>✅ Exclusive @65 Independence Discounts</li>
+        <li>✅ Freedom 14 Flash Sales & Special Combos</li>
+        <li>✅ Free Delivery Deals on Selected Items</li>
+        <li>✅ Green & White Themed Offers to Celebrate Nigeria</li>
+        <li>✅ Trusted Brands & Quality Products for Every Shopper</li>
+      </ul>
+      <p>
+        From <strong>Freedom 14</strong> flash deals to
+        <strong>Shoppers’ Choice Offers</strong> and
+        <strong>Green & White Specials</strong>, every Nigerian can join the
+        celebration with amazing discounts and fast delivery. No matter what you
+        need, there’s something for everyone at Konga this Independence season.
+      </p>
+      <h3>🛒 Celebrate Freedom @65 – Shop Now!</h3>
+      <p>
+        Don't miss out on Konga’s biggest Independence celebration yet!
+        Enjoy unbeatable discounts, flash sales, and limited-time deals across
+        all categories. Shop proudly in green and white, save big, and celebrate
+        Nigeria’s 65 years of freedom with every purchase.
+      </p>
+      <p>
+        Explore all Independence @65 deals now at
+        <a href="https://www.konga.com" target="_blank">www.konga.com</a> and
+        join millions of Nigerians celebrating freedom, unity, and unbeatable
+        value — only with Konga.
+      </p>
+    </section>
+  </body>
+</html>
